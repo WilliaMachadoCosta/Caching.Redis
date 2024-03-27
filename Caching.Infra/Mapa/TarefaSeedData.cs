@@ -8,7 +8,7 @@ namespace Caching.Infra.Mapa
     {
         List<TaskItem> tasks = new List<TaskItem>();
 
-        for (int i = 1; i <= 10000; i++)
+        for (int i = 1; i <= 3000; i++)
         {
                 tasks.Add(new TaskItem(
 

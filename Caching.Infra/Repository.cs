@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Caching.Infra
 {
-    internal class Repository : IRepository
+    public class Repository : IRepository
     {
         private readonly DataContext _context;
 
@@ -26,5 +26,6 @@ namespace Caching.Infra
                  .TaskItens
                  .FirstOrDefault(x => x.Id == id );
         }
+
     }
 }
