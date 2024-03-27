@@ -1,8 +1,6 @@
 ﻿using Caching.Domain;
 using Caching.Infra.Mapa;
 using Microsoft.EntityFrameworkCore;
-using System.Collections.Generic;
-using System.Reflection.Emit;
 
 namespace Caching.Infra
 {
@@ -13,10 +11,10 @@ namespace Caching.Infra
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.ApplyConfiguration(new TarefaMap());
+            modelBuilder.ApplyConfiguration(new TaskMap());
         }
 
-        public DbSet<Tarefa> Products { get; set; }
+        public DbSet<TaskItem> Products { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

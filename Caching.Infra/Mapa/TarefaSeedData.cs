@@ -4,27 +4,24 @@ namespace Caching.Infra.Mapa
 {
     public static class TarefaSeedData
 {
-    public static List<Tarefa> Seed()
+    public static List<TaskItem> Seed()
     {
-        List<Tarefa> tarefas = new List<Tarefa>();
+        List<TaskItem> tasks = new List<TaskItem>();
 
         for (int i = 1; i <= 10000; i++)
         {
-                tarefas.Add(new Tarefa(
+                tasks.Add(new TaskItem(
 
                     id: i,
-                    titulo: $"Tarefa {i}",
-                    descricao: $"Descrição da tarefa {i}",
-                    dataLimite: DateTime.Now.AddDays(i),
-                    prioridade: i % 5 + 1,
-                    concluida: i % 2 == 0
+                    title: $"Task {i}",
+                    description: $"Task Description {i}",
+                    deadline: DateTime.Now.AddDays(i),
+                    priority: i % 5 + 1,
+                    completed: i % 2 == 0
                     ));
-
-         
-           
         }
 
-        return tarefas;
+        return tasks;
     }
 }
 
