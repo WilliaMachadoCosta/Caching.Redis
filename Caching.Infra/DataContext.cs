@@ -14,7 +14,7 @@ namespace Caching.Infra
             modelBuilder.ApplyConfiguration(new TaskMap());
         }
 
-        public DbSet<TaskItem> Products { get; set; }
+        public DbSet<TaskItem> TaskItens { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
