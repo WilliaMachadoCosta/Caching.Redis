@@ -22,9 +22,9 @@ namespace Caching.Infra.Mapa
 
             builder.Property(p => p.Completed).IsRequired();
 
-            builder.Property(p => p.Deadline).IsRequired().HasColumnType("datetime");
+            builder.Property(p => p.Deadline).IsRequired().HasColumnType("timestamp with time zone");
 
-            builder.HasData(TarefaSeedData.Seed());
+            builder.HasData(TaskSeedData.Seed());
         }
 
 

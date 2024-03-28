@@ -16,9 +16,9 @@ namespace Caching.Infra
 
         public DbSet<TaskItem> TaskItens { get; set; }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseInMemoryDatabase("Tarefa");
-        }
+        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        //{
+        //    optionsBuilder.UseNpgsql("todo");
+        //}
     }
 }

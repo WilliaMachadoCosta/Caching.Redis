@@ -16,8 +16,11 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<DataContext>(options =>
 {
-    options.UseInMemoryDatabase("ToDo");
+    options.UseNpgsql(builder.Configuration.GetConnectionString("todo"));
 });
+
+builder.Services.AddStackExchangeRedisCache(options =>
+    options.Configuration = builder.Configuration.GetConnectionString("Cache"));
 
 builder.Services.AddScoped<DataContext, DataContext>();
 builder.Services.AddTransient<IRepository, Repository>();

@@ -17,7 +17,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Caching.Infra", "Caching.In
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Caching.Services", "Caching.Services\Caching.Services.csproj", "{839B766C-52FE-4D4E-B969-0B1C38557B9F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi", "WebApi\WebApi.csproj", "{C7CB564D-D6E3-4D7D-AC1D-D9653BD489C4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApi", "WebApi\WebApi.csproj", "{C7CB564D-D6E3-4D7D-AC1D-D9653BD489C4}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{CBCCA5BF-54D3-47C8-8E3C-DFC072117D8A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,6 +43,10 @@ Global
 		{C7CB564D-D6E3-4D7D-AC1D-D9653BD489C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C7CB564D-D6E3-4D7D-AC1D-D9653BD489C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C7CB564D-D6E3-4D7D-AC1D-D9653BD489C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CBCCA5BF-54D3-47C8-8E3C-DFC072117D8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBCCA5BF-54D3-47C8-8E3C-DFC072117D8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBCCA5BF-54D3-47C8-8E3C-DFC072117D8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBCCA5BF-54D3-47C8-8E3C-DFC072117D8A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
