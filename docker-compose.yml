@@ -23,7 +23,7 @@ services:
     ports:
       - 5432:5432
 
-  products.cache:
+  todo.cache:
     image: redis:latest
     restart: always
     ports:

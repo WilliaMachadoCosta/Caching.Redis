@@ -4,7 +4,7 @@ namespace Caching.Infra.Interfaces
 {
     public interface IRepository
     {
-        TaskItem GetById(int id);
-        IEnumerable<TaskItem> GetAll();
+        Task<TaskItem> GetById(int id);
+       Task<IEnumerable<TaskItem>> GetAll();
     }
 }

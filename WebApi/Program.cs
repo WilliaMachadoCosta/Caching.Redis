@@ -3,6 +3,7 @@ using Caching.Domain;
 using Caching.Infra;
 using Caching.Infra.Interfaces;
 using Microsoft.EntityFrameworkCore;
+using StackExchange.Redis;
 using WebApi.Model;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -19,11 +20,22 @@ builder.Services.AddDbContext<DataContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("todo"));
 });
 
-builder.Services.AddStackExchangeRedisCache(options =>
-    options.Configuration = builder.Configuration.GetConnectionString("Cache"));
+builder.Services.AddSingleton(p =>
+{
+    var configure = ConfigurationOptions.Parse(builder.Configuration.GetConnectionString("Cache"));
+    return ConnectionMultiplexer.Connect(configure);
+});
+
+builder.Services.AddSingleton<IDatabase>(provider => {
+    var redis = ConnectionMultiplexer.Connect(builder.Configuration.GetConnectionString("Cache"));
+    return redis.GetDatabase();
+});
+
 
 builder.Services.AddScoped<DataContext, DataContext>();
 builder.Services.AddTransient<IRepository, Repository>();
+builder.Services.AddSingleton<IRedisRepository<TaskItem>, RedisRepository<TaskItem>>();
+
 
 var config = new MapperConfiguration(cfg =>
 {

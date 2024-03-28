@@ -9,7 +9,7 @@ namespace Caching.Infra.Mapa
         List<TaskItem> tasks = new List<TaskItem>();
             DateTime currentUtcTime = DateTime.UtcNow;
 
-            for (int i = 1; i <= 3000; i++)
+            for (int i = 1; i <= 100; i++)
         {
                 tasks.Add(new TaskItem(
 

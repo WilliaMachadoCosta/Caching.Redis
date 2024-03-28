@@ -13,18 +13,17 @@ namespace Caching.Infra
             _context = context;
         }
 
-        public IEnumerable<TaskItem> GetAll()
+        public async Task<IEnumerable<TaskItem>> GetAll()
         {
-            return _context.TaskItens
+            return await _context.TaskItens
                .AsNoTracking()
-               .OrderBy(x => x.Deadline);
+               .OrderBy(x => x.Deadline)
+               .ToListAsync();
         }
 
-        public TaskItem GetById(int id)
+        public async Task<TaskItem> GetById(int id)
         {
-            return _context
-                 .TaskItens
-                 .FirstOrDefault(x => x.Id == id );
+            return await _context.TaskItens.FirstOrDefaultAsync(p => p.Id == id);
         }
 
     }
